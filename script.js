@@ -75,3 +75,29 @@
 // 	}
 // }
 // console.log(yearsTillRetirement(1990, 2022, "Eugenia"));
+
+
+// arrays
+const friends = ['Eugenia', 'Bob'];
+// console.log(friends);
+// console.log(friends.length)
+// console.log(friends[0])
+// console.log(friends[friends.length - 1])
+// friends[1] = 'Jay'
+// console.log(friends);
+
+
+//exercise
+const calcAge = function (birthYear) {
+	return 2037 - birthYear;
+}
+const years = [1990, 1989, 1995];
+// push method - add element array.
+friends.push('Vika');
+friends.push('Rima');
+friends.push('Michelle');
+friends.unshift('Victor');
+// pop method - remove last element in an array
+friends.pop();
+console.log(friends)
+console.log(friends.indexOf('rima'));
