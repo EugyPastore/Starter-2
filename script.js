@@ -110,16 +110,23 @@ const eugenia = {
 	birthYear: 1990,
 	lastName: 'Pastore',
 	friends: ['Vika', 'Nastya', 'Michelle'],
+	hasChildren: false,
 	calcAge: function (birthYear) {
-		return 2037 - birthYear;
+		return 2022 - birthYear;
 	},
 	calcAge2: function () {
-		this.age = 2037 - this.birthYear;
+		this.age = 2022 - this.birthYear;
 		return this.age;
+	},
+	getSummary: function () {
+		return `Her name is ${this.name} ${this.lastName} and she is ${this.calcAge2()}. ${this.name}'s favourite color is ${this.color} and she has ${this.friends} as friends. She has ${this.hasChildren ? "children." : "no children."}`
 	}
 }
 console.log(eugenia.calcAge(1990))
 console.log(eugenia.calcAge2())
+console.log(eugenia.getSummary())
+// challange
+
 // const interestedIn = prompt('What do you want to know about Eugenia?(name, color, age, lastName, friends)')
 
 // if (eugenia[interestedIn]) {
