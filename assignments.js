@@ -17,19 +17,19 @@
 // checkWinner(scoreDolphins, scoreKoalas);
 //================================================================================
 // coding challenge 2 arrays
-const bills = [125, 555, 44];
-const total = []
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])]
-function calcTip(bill) {
-	if (bill >= 50 && bill <= 300) {
-		const tip = bill * 0.15;
-		total.push(tip + bill)
-		return tip;
-	} else {
-		const tip = bill * 0.2;
-		total.push(tip + bill)
-		return tip;
-	}
-}
+// const bills = [125, 555, 44];
+// const total = []
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])]
+// function calcTip(bill) {
+// 	if (bill >= 50 && bill <= 300) {
+// 		const tip = bill * 0.15;
+// 		total.push(tip + bill)
+// 		return tip;
+// 	} else {
+// 		const tip = bill * 0.2;
+// 		total.push(tip + bill)
+// 		return tip;
+// 	}
+// }
 
-console.log(bills, tips, total);
+// console.log(bills, tips, total);

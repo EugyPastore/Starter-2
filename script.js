@@ -78,7 +78,7 @@
 
 
 // arrays
-const friends = ['Eugenia', 'Bob'];
+// const friends = ['Eugenia', 'Bob'];
 // console.log(friends);
 // console.log(friends.length)
 // console.log(friends[0])
@@ -101,3 +101,31 @@ const friends = ['Eugenia', 'Bob'];
 // friends.pop();
 // console.log(friends)
 // console.log(friends.indexOf('rima'));
+
+// objects- are not ordered
+const eugenia = {
+	name: 'Eugenia',
+	color: 'purple',
+	age: 2022 - 1990,
+	birthYear: 1990,
+	lastName: 'Pastore',
+	friends: ['Vika', 'Nastya', 'Michelle'],
+	calcAge: function (birthYear) {
+		return 2037 - birthYear;
+	},
+	calcAge2: function () {
+		this.age = 2037 - this.birthYear;
+		return this.age;
+	}
+}
+console.log(eugenia.calcAge(1990))
+console.log(eugenia.calcAge2())
+// const interestedIn = prompt('What do you want to know about Eugenia?(name, color, age, lastName, friends)')
+
+// if (eugenia[interestedIn]) {
+// 	console.log(eugenia[interestedIn]);
+// } else {
+// 	console.log("Wrong request.What do you want to know about Eugenia?(name, color, age, lastName, friends)")
+// }
+
+// console.log(`${eugenia.name} has ${eugenia.friends.length} friends and the best friend is ${eugenia.friends[0]}`)
