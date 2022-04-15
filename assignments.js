@@ -2,6 +2,8 @@
 // let scoreDolphins = calcAverage(44, 23, 71);
 // let scoreKoalas = calcAverage(65, 54, 49);
 
+'use strict'
+
 // function checkWinner(avgDolphins, avgKoalas) {
 // 	if (avgDolphins >= 2 * avgKoalas) {
 // 		console.log(`The winner is Dolphins!(${avgDolphins} vs ${avgKoalas})`);
@@ -33,3 +35,75 @@
 // }
 
 // console.log(bills, tips, total);
+//===============================================================================
+// 3 challange about objects
+const selectionButtons = document.querySelectorAll('[data-selection]')
+//GLOBAL VARIABLE IN ALL CAPS THAT WILL NOT CHANGE
+const SELECTIONS = [
+	{
+		name: "mark",
+		lastName: "Miller",
+		weight: 78,
+		height: 1.69,
+		calcBmi: function () {
+			this.bmi = this.weight / this.height ** 2;
+			return this.bmi;
+		}
+	},
+	{
+		name: "john",
+		lastName: "Smith",
+		weight: 92,
+		height: 1.95,
+		calcBmi: function () {
+			this.bmi = this.weight / this.height ** 2;
+			return this.bmi;
+		}
+	}
+]
+function displayAnswer(selection) {
+	const div = document.createElement('div')
+	div.innerText = (selection)
+}
+selectionButtons.forEach(selectionButton => {
+	selectionButton.addEventListener('click', e => {
+		const selectionName = selectionButton.dataset.selection
+		// looping through all selections to see which mathes with our selectionName on click
+		const selection = SELECTIONS.find(selection => selection.name === selectionName)
+		console.log(selection)
+	})
+})
+
+// const mark = {
+// 	name: "Mark",
+// 	lastName: "Miller",
+// 	weight: 78,
+// 	height: 1.69,
+// 	calcBmi: function () {
+// 		this.bmi = this.weight / this.height ** 2;
+// 		return this.bmi;
+// 	}
+// };
+
+// const john = {
+// 	name: "John",
+// 	lastName: "Smith",
+// 	weight: 92,
+// 	height: 1.95,
+// 	calcBmi: function () {
+// 		this.bmi = this.weight / this.height ** 2;
+// 		return this.bmi;
+// 	}
+// };
+// 1ST WAY OF WRITING
+// if (mark.calcBmi() > john.calcBmi()) {
+// 	console.log(`${mark.name} ${mark.lastName}'s BMI (${mark.bmi}) is higher than ${john.name} ${john.lastName}'s (${john.bmi})`);
+// } else if (john.calcBmi() > mark.calcBmi()) {
+// 	console.log(`${john.name} ${john.lastName}'s BMI (${john.bmi}) is higher than ${mark.name} ${mark.lastName}'s (${mark.bmi})`);
+// }
+//2ND WAY OF WRITING
+// if (mark.bmi > john.bmi) {
+// 	console.log(`${mark.name} ${mark.lastName}'s BMI (${mark.bmi}) is higher than ${john.name} ${john.lastName}'s (${john.bmi})`);
+// } else if (john.bmi > mark.bmi) {
+// 	console.log(`${john.name} ${john.lastName}'s BMI (${john.bmi}) is higher than ${mark.name} ${mark.lastName}'s (${mark.bmi})`);
+// }
