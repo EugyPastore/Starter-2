@@ -37,64 +37,48 @@
 // console.log(bills, tips, total);
 //===============================================================================
 // 3 challange about objects
-const selectionButtons = document.querySelectorAll('[data-selection]')
+const selectionButton = document.querySelector('.selection')
 //GLOBAL VARIABLE IN ALL CAPS THAT WILL NOT CHANGE
-const SELECTIONS = [
-	{
-		name: "mark",
-		lastName: "Miller",
-		weight: 78,
-		height: 1.69,
-		calcBmi: function () {
-			this.bmi = this.weight / this.height ** 2;
-			return this.bmi;
-		}
-	},
-	{
-		name: "john",
-		lastName: "Smith",
-		weight: 92,
-		height: 1.95,
-		calcBmi: function () {
-			this.bmi = this.weight / this.height ** 2;
-			return this.bmi;
-		}
+const mark = {
+	name: "Mark",
+	lastName: "Miller",
+	weight: 78,
+	height: 1.69,
+	calcBmi: function () {
+		this.bmi = this.weight / this.height ** 2;
+		return this.bmi;
 	}
-]
-function displayAnswer(selection) {
-	const div = document.createElement('div')
-	div.innerText = (selection)
-}
-selectionButtons.forEach(selectionButton => {
-	selectionButton.addEventListener('click', e => {
-		const selectionName = selectionButton.dataset.selection
-		// looping through all selections to see which mathes with our selectionName on click
-		const selection = SELECTIONS.find(selection => selection.name === selectionName)
-		console.log(selection)
-	})
+};
+
+const john = {
+	name: "John",
+	lastName: "Smith",
+	weight: 92,
+	height: 1.95,
+	calcBmi: function () {
+		this.bmi = this.weight / this.height ** 2;
+		return this.bmi;
+	}
+};
+
+
+
+selectionButton.addEventListener('click', function () {
+
+	function displayAnswer() {
+		let div = document.createElement('div');
+		if (mark.calcBmi() > john.calcBmi()) {
+			div.innerText = `${mark.name} ${mark.lastName}'s BMI (${mark.bmi}) is higher than ${john.name} ${john.lastName}'s (${john.bmi})`;
+		} else if (john.calcBmi() > mark.calcBmi()) {
+			div.innerText = `${john.name} ${john.lastName}'s BMI (${john.bmi}) is higher than ${mark.name} ${mark.lastName}'s (${mark.bmi})`;
+		}
+		document.body.appendChild(div);
+	}
+	displayAnswer()
 })
 
-// const mark = {
-// 	name: "Mark",
-// 	lastName: "Miller",
-// 	weight: 78,
-// 	height: 1.69,
-// 	calcBmi: function () {
-// 		this.bmi = this.weight / this.height ** 2;
-// 		return this.bmi;
-// 	}
-// };
 
-// const john = {
-// 	name: "John",
-// 	lastName: "Smith",
-// 	weight: 92,
-// 	height: 1.95,
-// 	calcBmi: function () {
-// 		this.bmi = this.weight / this.height ** 2;
-// 		return this.bmi;
-// 	}
-// };
+
 // 1ST WAY OF WRITING
 // if (mark.calcBmi() > john.calcBmi()) {
 // 	console.log(`${mark.name} ${mark.lastName}'s BMI (${mark.bmi}) is higher than ${john.name} ${john.lastName}'s (${john.bmi})`);

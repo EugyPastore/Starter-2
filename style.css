@@ -2,7 +2,7 @@ body {
 	height: 100vh;
 	/* display: flex;
 	align-items: center; */
-	background: linear-gradient(to top left, #3428b4, #6f8ad5);
+	background: linear-gradient(to top left, #fbd5b3, #fad8c8);
 }
 
 h1 {
@@ -12,7 +12,7 @@ h1 {
 	width: 100%;
 	padding: 30px;
 	text-align: center;
-	color: white;
+	color: rgb(24, 24, 24);
 }
 
 .selection {
@@ -25,5 +25,32 @@ h1 {
 
 .result-selection {
 	background-color: antiquewhite;
+	color: black;
+}
 
+.showcase {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+img {
+	padding: 40px;
+}
+
+img:hover {
+	transform: scale(1.3);
+}
+
+button {
+	background: rgba(255, 255, 255, 0);
+	color: #d97a26;
+	font-size: larger;
+	padding: 8px 24px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border: 0px;
+	border-bottom: 1px solid #d97a26;
+	border-top: 1px solid #d97a26;
 }
