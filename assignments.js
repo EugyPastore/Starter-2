@@ -72,12 +72,11 @@ selectionButton.addEventListener('click', function () {
 		} else if (john.calcBmi() > mark.calcBmi()) {
 			div.innerText = `${john.name} ${john.lastName}'s BMI (${john.bmi}) is higher than ${mark.name} ${mark.lastName}'s (${mark.bmi})`;
 		}
+		div.classList.add('result-selection')
 		document.body.appendChild(div);
 	}
 	displayAnswer()
 })
-
-
 
 // 1ST WAY OF WRITING
 // if (mark.calcBmi() > john.calcBmi()) {
