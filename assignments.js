@@ -37,47 +37,47 @@
 // console.log(bills, tips, total);
 //===============================================================================
 // 3 challange about objects
-const selectionButton = document.querySelector('.selection')
-//GLOBAL VARIABLE IN ALL CAPS THAT WILL NOT CHANGE
-const mark = {
-	name: "Mark",
-	lastName: "Miller",
-	weight: 78,
-	height: 1.69,
-	calcBmi: function () {
-		this.bmi = Math.floor(this.weight / this.height ** 2);
-		return this.bmi;
-	}
-};
+// const selectionButton = document.querySelector('.selection')
+// //GLOBAL VARIABLE IN ALL CAPS THAT WILL NOT CHANGE
+// const mark = {
+// 	name: "Mark",
+// 	lastName: "Miller",
+// 	weight: 78,
+// 	height: 1.69,
+// 	calcBmi: function () {
+// 		this.bmi = Math.floor(this.weight / this.height ** 2);
+// 		return this.bmi;
+// 	}
+// };
 
-const john = {
-	name: "John",
-	lastName: "Smith",
-	weight: 92,
-	height: 1.95,
-	calcBmi: function () {
-		this.bmi = Math.floor(this.weight / this.height ** 2);
-		return this.bmi;
-	}
-};
+// const john = {
+// 	name: "John",
+// 	lastName: "Smith",
+// 	weight: 92,
+// 	height: 1.95,
+// 	calcBmi: function () {
+// 		this.bmi = Math.floor(this.weight / this.height ** 2);
+// 		return this.bmi;
+// 	}
+// };
 
 
 
-selectionButton.addEventListener('click', function () {
+// selectionButton.addEventListener('click', function () {
 
-	function displayAnswer() {
-		let div = document.createElement('div');
-		if (mark.calcBmi() > john.calcBmi()) {
-			div.innerText = `${mark.name} ${mark.lastName}'s BMI is higher than ${john.name} ${john.lastName}'s. ${mark.bmi} vs ${john.bmi}`;
+// 	function displayAnswer() {
+// 		let div = document.createElement('div');
+// 		if (mark.calcBmi() > john.calcBmi()) {
+// 			div.innerText = `${mark.name} ${mark.lastName}'s BMI is higher than ${john.name} ${john.lastName}'s. ${mark.bmi} vs ${john.bmi}`;
 
-		} else if (john.calcBmi() > mark.calcBmi()) {
-			div.innerText = `${john.name} ${john.lastName}'s BMI is higher than ${mark.name} ${mark.lastName}'s.${john.bmi} vs ${mark.bmi}`;
-		}
-		div.classList.add('result-selection')
-		document.body.appendChild(div);
-	}
-	displayAnswer()
-})
+// 		} else if (john.calcBmi() > mark.calcBmi()) {
+// 			div.innerText = `${john.name} ${john.lastName}'s BMI is higher than ${mark.name} ${mark.lastName}'s.${john.bmi} vs ${mark.bmi}`;
+// 		}
+// 		div.classList.add('result-selection')
+// 		document.body.appendChild(div);
+// 	}
+// 	displayAnswer()
+// })
 
 // 1ST WAY OF WRITING
 // if (mark.calcBmi() > john.calcBmi()) {
@@ -91,3 +91,36 @@ selectionButton.addEventListener('click', function () {
 // } else if (john.bmi > mark.bmi) {
 // 	console.log(`${john.name} ${john.lastName}'s BMI (${john.bmi}) is higher than ${mark.name} ${mark.lastName}'s (${mark.bmi})`);
 // }
+
+
+// challenge #4
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
+const tips = []
+const totals = []
+
+for (let i = 0; i <= bills.length - 1; i++) {
+	function calcTip(bill) {
+		if (bills[i] >= 50 && bills[i] <= 300) {
+			const tip = bills[i] * 0.15;
+			totals.push(tip + bills[i])
+			tips.push(tip);
+		} else {
+			const tip = bills[i] * 0.2;
+			totals.push(tip + bills[i]);
+			tips.push(tip);
+		}
+
+	}
+	calcTip(bills[i])
+}
+console.log(bills, tips, totals)
+function calcAverage(arr) {
+	let sum = 0
+	for (let i = 0; i <= arr.length - 1; i++) {
+		sum = sum + arr[i];
+	}
+	sum = sum / arr.length;
+	return sum;
+}
+calcAverage(bills);
