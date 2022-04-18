@@ -55,3 +55,14 @@ console.log(ages)
 for (i = years.length - 1; i >= 0; i--) {
 	console.log(years[i])
 }
+
+// loop inside loop
+
+for (let exercise = 1; exercise < 4; exercise++) {
+	console.log(`----Starting exercise ${exercise}`)
+
+	for (let repetition = 1; repetition < 6; repetition++) {
+		console.log(`Exercise ${exercise}: Repetition ${repetition}`)
+	}
+
+}
