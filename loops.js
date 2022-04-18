@@ -66,3 +66,17 @@ for (let exercise = 1; exercise < 4; exercise++) {
 	}
 
 }
+
+// WHILE loop (condition, increase counter) and we do counter before loop
+let rep = 18;
+while (rep <= 20) {
+	console.log(`While loop: Eugenia rep ${rep}`);
+	rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+	console.log(dice);
+	dice = Math.trunc(Math.random() * 6) + 1;
+}
