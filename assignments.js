@@ -45,7 +45,7 @@ const mark = {
 	weight: 78,
 	height: 1.69,
 	calcBmi: function () {
-		this.bmi = this.weight / this.height ** 2;
+		this.bmi = Math.floor(this.weight / this.height ** 2);
 		return this.bmi;
 	}
 };
@@ -56,7 +56,7 @@ const john = {
 	weight: 92,
 	height: 1.95,
 	calcBmi: function () {
-		this.bmi = this.weight / this.height ** 2;
+		this.bmi = Math.floor(this.weight / this.height ** 2);
 		return this.bmi;
 	}
 };
@@ -68,9 +68,10 @@ selectionButton.addEventListener('click', function () {
 	function displayAnswer() {
 		let div = document.createElement('div');
 		if (mark.calcBmi() > john.calcBmi()) {
-			div.innerText = `${mark.name} ${mark.lastName}'s BMI (${mark.bmi}) is higher than ${john.name} ${john.lastName}'s (${john.bmi})`;
+			div.innerText = `${mark.name} ${mark.lastName}'s BMI is higher than ${john.name} ${john.lastName}'s. ${mark.bmi} vs ${john.bmi}`;
+
 		} else if (john.calcBmi() > mark.calcBmi()) {
-			div.innerText = `${john.name} ${john.lastName}'s BMI (${john.bmi}) is higher than ${mark.name} ${mark.lastName}'s (${mark.bmi})`;
+			div.innerText = `${john.name} ${john.lastName}'s BMI is higher than ${mark.name} ${mark.lastName}'s.${john.bmi} vs ${mark.bmi}`;
 		}
 		div.classList.add('result-selection')
 		document.body.appendChild(div);
