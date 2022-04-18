@@ -49,3 +49,9 @@ for (let i = 0; i < years.length; i++) {
 }
 
 console.log(ages)
+
+//
+
+for (i = years.length - 1; i >= 0; i--) {
+	console.log(years[i])
+}
